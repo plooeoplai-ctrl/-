@@ -1,0 +1,25 @@
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0.2, 0, 0.4, 0)
+Frame.Position = UDim2.new(0.05, 0, 0.3, 0)
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 0.5
+Frame.Parent = ScreenGui
+
+local Buttons = {
+    ["วิ่งเร็ว"] = UDim2.new(0.1, 0, 0.1, 0);
+    ["บินได้"] = UDim2.new(0.1, 0, 0.2, 0);
+    ["ออโต้ตัดไม้"] = UDim2.new(0.1, 0, 0.3, 0);
+    ["ดึงของทั้งหมด"] = UDim2.new(0.1, 0, 0.4, 0);
+    ["ภาพสว่าง"] = UDim2.new(0.1, 0, 0.5, 0);
+}
+
+for name, pos in pairs(Buttons) do
+    local Button = Instance.new("TextButton")
+    Button.Size = UDim2.new(0.8, 0, 0.1, 0)
+    Button.Position = pos
+    Button.Text = name
+    Button.Parent = Frame
+end
