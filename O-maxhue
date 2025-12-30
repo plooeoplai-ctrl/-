@@ -1,0 +1,34 @@
+local gui = script.Parent
+local player = game.Players.LocalPlayer
+local humanoid = player.Character.Humanoid
+
+-- วิ่งเร็ว
+gui.Frame["วิ่งเร็ว"].MouseButton1Click:Connect(function()
+    humanoid.WalkSpeed = 50 -- ความเร็ว 50
+end)
+
+-- บินได้
+gui.Frame["บินได้"].MouseButton1Click:Connect(function()
+    local bodyGyro = Instance.new("BodyGyro")
+    local bodyVelocity = Instance.new("BodyVelocity")
+    bodyGyro.Parent = player.Character.HumanoidRootPart
+    bodyVelocity.Parent = player.Character.HumanoidRootPart
+    bodyVelocity.Velocity = Vector3.new(0, 50, 0) -- บินขึ้น
+end)
+
+-- ออโต้ตัดไม้
+gui.Frame["ออโต้ตัดไม้"].MouseButton1Click:Connect(function()
+    -- โค้ดสำหรับตัดไม้ (ต้องปรับตามแมพ)
+    print("ออโต้ตัดไม้ทำงาน")
+end)
+
+-- ดึงของทั้งหมด
+gui.Frame["ดึงของทั้งหมด"].MouseButton1Click:Connect(function()
+    -- โค้ดดึงของ (ต้องปรับตามแมพ)
+    print("ดึงของทั้งหมดทำงาน")
+end)
+
+-- ภาพสว่าง
+gui.Frame["ภาพสว่าง"].MouseButton1Click:Connect(function()
+    game.Lighting.Brightness = 2 -- ปรับความสว่าง
+end)
